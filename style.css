@@ -1,0 +1,151 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+a{
+    color: white;
+    text-decoration: none;
+    border-bottom: 2px solid white;
+}
+
+.video-bg video {
+    top: 0;
+    left: 0;
+    position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+@supports (object-fit: cover) {
+    .video-bg video {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+}
+.bacgroung{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.623);
+    z-index: 1;
+}
+.page{
+    position: relative;
+    z-index: 2;
+}
+.header{
+    position: relative;
+    display: flex;
+    top: 10px;
+}
+.logo {
+    width: 20%;
+}
+.logo img{
+    width: 100%;
+}
+.header__menu {
+    width: 80%;
+    margin: 0 auto;
+}
+.menu {
+    line-height: 35px;
+    font-size: 80%;
+}
+.menu a{
+    margin: 0 10px;
+}
+.menu__button input{
+    display: none;
+}
+
+.content{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+}
+.content__text{
+    position: absolute;
+    margin: 20px;
+}
+
+
+/* MEDIA */
+
+@media(max-height: 320px){
+    .content__text p{
+        font-size: .8rem;
+    }
+}
+@media(max-height: 430px){
+    .content__text p{
+        font-size: .6rem;
+    }
+}
+@media(min-width: 1024px){
+    .content__text {
+        top: 200px;
+    }
+    .menu{
+        font-size: 100%;
+    }
+    .logo{
+        width: 15%;
+    }
+}
+@media(max-width: 500px){
+    .menu__button label{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 5px;
+        background-color: white;
+        z-index: 2;
+    }
+    .menu__button label::before{
+        position: absolute;
+        top: 10px;
+        content: "";
+        display: block;
+        width: 30px;
+        height: 5px;
+        background-color: white;
+    }
+    .menu__button label::after{
+        position: absolute;
+        top: 20px;
+        content: "";
+        display: block;
+        width: 30px;
+        height: 5px;
+        background-color: white;
+    }
+    .menu-items{
+        position: relative;
+        right: -10px;
+        width: 400px;
+        height: 90px;
+        background-color: black;
+        display: none;
+}
+    .menu a{
+        position: absolute;
+        border-bottom: none;
+    }
+    .menu a:last-child{
+        top: 50px;
+    }
+    #burger-button:checked + label ~.menu-items{
+        display: block;
+    } 
+}
